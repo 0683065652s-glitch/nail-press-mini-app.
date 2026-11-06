@@ -16,7 +16,17 @@ const bot = new Telegraf(BOT_TOKEN);
 const app = express();
 
 app.use(express.json({ limit: "30kb" }));
-app.use(express.static(path.join(__dirname, "public")));
+const fs = require("fs");
+
+const publicFolder = fs.existsSync(path.join(__dirname, "public", "index.html"))
+  ? path.join(__dirname, "public")
+  : __dirname;
+
+app.use(express.static(publicFolder));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(publicFolder, "index.html"));
+});
 
 function verifyTelegramInitData(initData) {
   if (!initData) return false;
