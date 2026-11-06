@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4D0A0A">
+  <title>NAIL.PRESS — оформлення замовлення</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="brand">NAIL.PRESS</div>
+      <div class="eyebrow">PRESS-ON NAILS</div>
+      <div class="hero-line"></div>
+      <h1>Твій ідеальний манікюр починається тут.</h1>
+      <p>Індивідуальні набори накладних нігтів, створені з урахуванням твоїх побажань.</p>
+      <a class="instagram-link" href="https://www.instagram.com/nail.press.ua?rpxt=N2w0ZjBwa2l4aGEw" target="_blank" rel="noopener noreferrer">
+        Переглянути Instagram <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <section class="intro">
+      <h2>Як оформити замовлення?</h2>
+      <p>Заповни коротку форму нижче, вкажи свої заміри та побажання щодо дизайну. Після отримання заявки ми зв'яжемося з тобою для уточнення деталей.</p>
+    </section>
+
+    <form id="order-form">
+      <section class="form-section">
+        <div class="section-kicker">01 / КОНТАКТНІ ДАНІ</div>
+        <h2>Як з тобою зв'язатися?</h2>
+
+        <label for="name">Прізвище та ім'я <span>*</span></label>
+        <input id="name" name="name" autocomplete="name" placeholder="Введіть ваше ПІБ" required>
+
+        <label for="phone">Номер телефону <span>*</span></label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+380 __ ___ __ __" required>
+
+        <label for="telegram">Telegram для зв'язку <span>*</span></label>
+        <input id="telegram" name="telegram" placeholder="@username" required>
+      </section>
+
+      <section class="form-section">
+        <div class="section-kicker">02 / ДОСТАВКА</div>
+        <h2>Куди відправити замовлення?</h2>
+        <label for="nova-poshta">Місто та номер відділення / поштомата Нової пошти <span>*</span></label>
+        <textarea id="nova-poshta" name="novaPoshta" rows="2" placeholder="Наприклад: Київ, відділення №..." required></textarea>
+      </section>
+
+      <section class="form-section">
+        <div class="section-kicker">03 / ЗАМІРИ НІГТІВ</div>
+        <h2>Вкажи ширину нігтів</h2>
+        <p class="hint">Внеси ширину кожної нігтьової пластини окремо в міліметрах.</p>
+        <div class="hands">
+          <div class="hand-card">
+            <h3>Ліва рука</h3>
+            <div id="left-measurements"></div>
+          </div>
+          <div class="hand-card">
+            <h3>Права рука</h3>
+            <div id="right-measurements"></div>
+          </div>
+        </div>
+        <p class="small-note">Усього потрібно вказати 10 значень. Вводь лише число в міліметрах, наприклад: 14.</p>
+      </section>
+
+      <section class="form-section">
+        <div class="section-kicker">04 / ДИЗАЙН</div>
+        <h2>Який дизайн бажаєш?</h2>
+        <p class="hint">Можеш надіслати приклад з Instagram або описати власну ідею. Заповни хоча б одне з двох полів.</p>
+
+        <label for="instagram-design">Посилання на дизайн з Instagram</label>
+        <input id="instagram-design" type="url" placeholder="https://www.instagram.com/p/...">
+
+        <div class="or-divider"><span>або</span></div>
+
+        <label for="design-description">Власний опис</label>
+        <textarea id="design-description" rows="4" placeholder="Опиши бажаний колір, форму, довжину та деталі дизайну..."></textarea>
+      </section>
+
+      <section class="measure-guide">
+        <div class="section-kicker">ІНСТРУКЦІЯ</div>
+        <h2>Як правильно виміряти нігті?</h2>
+        <p>Для точного виготовлення набору важливо правильно виміряти ширину кожної нігтьової пластини. Є два прості способи:</p>
+
+        <h3>1. За допомогою нитки або смужки паперу</h3>
+        <ol>
+          <li>Приклади нитку або тонку смужку паперу поперек найширшої частини нігтя.</li>
+          <li>Познач краї нігтьової пластини.</li>
+          <li>Виміряй відстань між позначками за допомогою лінійки в міліметрах.</li>
+          <li>Повтори вимірювання для кожного нігтя.</li>
+          <li>Запиши всі 10 значень у такому порядку: великий → вказівний → середній → безіменний → мізинець на кожній руці.</li>
+        </ol>
+
+        <h3>2. За допомогою міліметрової стрічки</h3>
+        <p>Якщо маєш гнучку сантиметрову або міліметрову стрічку, просто виміряй ширину нігтя в найширшому місці.</p>
+
+        <div class="important">
+          <strong>Важливо!</strong>
+          Вимірюй саме ширину нігтьової пластини, а не її довжину. Усі заміри записуй у міліметрах.
+        </div>
+      </section>
+
+      <button class="submit-button" id="submit-button" type="submit">НАДІСЛАТИ ЗАЯВКУ <span>↗</span></button>
+      <p class="form-footnote">Перевір введені дані перед відправленням. Ми зв'яжемося з тобою для підтвердження замовлення.</p>
+      <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+    </form>
+
+    <footer>
+      <div class="footer-brand">NAIL.PRESS</div>
+      <a href="https://www.instagram.com/nail.press.ua?rpxt=N2w0ZjBwa2l4aGEw" target="_blank" rel="noopener noreferrer">@nail.press.ua</a>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
