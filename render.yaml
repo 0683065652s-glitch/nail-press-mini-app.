@@ -9,5 +9,5 @@ services:
     envVars:
       - key: AAFlv-C1xA8sHblVr20Ibu12CyiufM6BzcM
         sync: false
-      - key: 5196055115
+      - key: id5196055115
         sync: false
