@@ -7,7 +7,7 @@ services:
     startCommand: npm start
     healthCheckPath: /
     envVars:
-      - key: BOT_TOKEN
+      - key: 8925947769:AAFlv-C1xA8sHblVr20Ibu12CyiufM6BzcM
         sync: false
-      - key: ADMIN_CHAT_ID
+      - key: 1800071598
         sync: false
